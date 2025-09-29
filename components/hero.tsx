@@ -13,11 +13,11 @@ export function Hero() {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-6xl px-4 min-h-[100svh] flex items-center">
-        <div className="max-w-2xl reveal">
-          <h1 className="text-balance text-4xl md:text-6xl font-semibold leading-tight">
+        <div className="max-w-2xl reveal text-gray-100 drop-shadow-lg">
+          <h1 className="text-balance text-4xl md:text-6xl font-semibold leading-tight text-gray-200">
             Experience the luxury your car deserves
           </h1>
-          <p className="mt-4 text-pretty text-muted-foreground md:text-lg">
+          <p className="mt-4 text-pretty md:text-lg text-gray-300">
             Cinematic mobile detailing in Albuquerque and surrounding areas — exterior & interior cleaning, full
             detailing, ceramic coating, paint correction, and headlight restoration.
           </p>
