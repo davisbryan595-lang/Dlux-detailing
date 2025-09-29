@@ -1,0 +1,6 @@
+- /img/logo-dlux.jpeg — D-LUX logo — Used in header and footer.
+- /img/hero-*.{webp,jpg} — Luxury sedan at dusk — Caption: Cinematic hero background, Albuquerque service.
+- /img/services/* — Unique service images — Captions per service in code.
+- /img/beforeafter/* — Before/after pairs — Captions in Gallery.
+- /img/projects/* — Case study thumbnails.
+- /img/avatars/* — Testimonial avatars.
