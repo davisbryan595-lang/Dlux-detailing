@@ -54,12 +54,12 @@ export function ContactForm() {
           </p>
           <ul className="mt-6 space-y-2 text-sm">
             <li>
-              <a className="hover:underline" href="tel:+15055570590">
+              <a className="hover-glow transition-colors" href="tel:+15055570590">
                 Phone: (505) 557-0590
               </a>
             </li>
             <li>
-              <a className="hover:underline" href="mailto:Do620322@gmail.com">
+              <a className="hover-glow transition-colors" href="mailto:Do620322@gmail.com">
                 Email: Do620322@gmail.com
               </a>
             </li>
