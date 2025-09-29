@@ -22,7 +22,7 @@ export function Hero() {
           >
             Experience the luxury your car deserves
           </h1>
-          <p className="mt-4 text-pretty md:text-lg text-gray-300 drop-shadow">
+          <p className="mt-4 text-pretty md:text-lg text-white drop-shadow">
             Cinematic mobile detailing in Albuquerque and surrounding areas — exterior & interior cleaning, full
             detailing, ceramic coating, paint correction, and headlight restoration.
           </p>

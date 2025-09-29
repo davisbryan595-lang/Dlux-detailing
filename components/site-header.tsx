@@ -33,27 +33,42 @@ export function SiteHeader() {
         <nav aria-label="Primary">
           <ul className="hidden md:flex items-center gap-6 text-sm">
             <li>
-              <a href="#services" className="hover:underline underline-offset-4 hover-glow">
+              <a
+                href="#services"
+                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
+              >
                 Services
               </a>
             </li>
             <li>
-              <a href="#process" className="hover:underline underline-offset-4 hover-glow">
+              <a
+                href="#process"
+                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
+              >
                 Process
               </a>
             </li>
             <li>
-              <a href="#gallery" className="hover:underline underline-offset-4 hover-glow">
+              <a
+                href="#gallery"
+                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
+              >
                 Before/After
               </a>
             </li>
             <li>
-              <a href="#pricing" className="hover:underline underline-offset-4 hover-glow">
+              <a
+                href="#pricing"
+                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
+              >
                 Pricing
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:underline underline-offset-4 hover-glow">
+              <a
+                href="#contact"
+                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
+              >
                 Contact
               </a>
             </li>
