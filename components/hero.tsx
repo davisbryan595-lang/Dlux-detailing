@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   return (
     <section aria-label="Hero" className="relative isolate overflow-hidden min-h-[100svh]">
-      {/* Background moving image */}
+      {/* Background moving image (hotlink) */}
       <div
-        className="absolute inset-0 bg-[url('/img/hero-dlux.jpg')] bg-center bg-no-repeat motion-safe:hero-drift"
-        style={{ backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+        className="absolute inset-0 bg-[url('https://images.unsplash.com/photos/jJ2u2XEj3tQ?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center bg-no-repeat motion-safe:hero-drift"
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-6xl px-4 min-h-[100svh] flex items-center">
@@ -28,8 +27,8 @@ export function Hero() {
           </div>
         </div>
       </div>
-      {/* Subtle vignette overlay for readability */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-background/10" />
+      {/* subtle vignetting for readability */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-background/20" />
     </section>
   )
 }
