@@ -3,9 +3,13 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   return (
     <section aria-label="Hero" className="relative isolate overflow-hidden min-h-[100svh]">
-      {/* Background moving image (hotlink) */}
+      {/* Background moving image */}
       <div
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photos/jJ2u2XEj3tQ?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center bg-no-repeat motion-safe:hero-drift"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat motion-safe:hero-drift"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80')",
+        }}
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-6xl px-4 min-h-[100svh] flex items-center">
