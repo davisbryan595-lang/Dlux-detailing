@@ -32,46 +32,22 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Primary">
           <ul className="hidden md:flex items-center gap-6 text-sm">
-            <li>
-              <a
-                href="#services"
-                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#process"
-                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
-              >
-                Process
-              </a>
-            </li>
-            <li>
-              <a
-                href="#gallery"
-                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
-              >
-                Before/After
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pricing"
-                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="hover-glow px-2 py-1 rounded-md transition-colors hover:bg-black/60"
-              >
-                Contact
-              </a>
-            </li>
+            {[
+              { href: "#services", label: "Services" },
+              { href: "#process", label: "Process" },
+              { href: "#gallery", label: "Before/After" },
+              { href: "#pricing", label: "Pricing" },
+              { href: "#contact", label: "Contact" },
+            ].map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="hover-glow px-3 py-1.5 rounded-md transition-all duration-300 ease-out hover:bg-black/60 hover:scale-105"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className="hidden md:block">

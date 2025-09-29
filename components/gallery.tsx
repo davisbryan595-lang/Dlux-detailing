@@ -1,65 +1,63 @@
-const pairs = [
-  {
-    before: "/img/beforeafter/1-before-large.jpg",
-    after: "/img/beforeafter/1-after-large.jpg",
-    caption: "Interior deep clean and leather care.",
-  },
-  {
-    before: "/img/beforeafter/2-before-large.jpg",
-    after: "/img/beforeafter/2-after-large.jpg",
-    caption: "Exterior wash and paint decontamination.",
-  },
-  {
-    before: "/img/beforeafter/3-before-large.jpg",
-    after: "/img/beforeafter/3-after-large.jpg",
-    caption: "Headlight restoration and lens sealing.",
-  },
-  {
-    before: "/img/beforeafter/4-before-large.jpg",
-    after: "/img/beforeafter/4-after-large.jpg",
-    caption: "Engine bay freshen and dressing.",
-  },
-  {
-    before: "/img/beforeafter/5-before-large.jpg",
-    after: "/img/beforeafter/5-after-large.jpg",
-    caption: "Paint correction for swirl removal.",
-  },
-  {
-    before: "/img/beforeafter/6-before-large.jpg",
-    after: "/img/beforeafter/6-after-large.jpg",
-    caption: "Ceramic coating hydrophobic finish.",
-  },
-]
+"use client"
 
-export function Gallery() {
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { useEffect } from "react"
+
+export function SiteHeader() {
+  // simple reveal hook
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
+      { threshold: 0.1 },
+    )
+    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el))
+    return () => obs.disconnect()
+  }, [])
+
   return (
-    <section id="gallery" aria-labelledby="gallery-title" className="py-16 md:py-20">
-      <div className="mx-auto max-w-6xl px-4">
-        <h2 id="gallery-title" className="text-3xl md:text-4xl font-semibold">
-          Before & After
-        </h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {pairs.map((p, i) => (
-            <figure key={i} className="reveal">
-              <div className="grid grid-cols-2 gap-2">
-                <img
-                  src={p.before || "/placeholder.svg"}
-                  alt="Before detailing"
-                  className="w-full h-40 object-cover rounded-md"
-                  loading="lazy"
-                />
-                <img
-                  src={p.after || "/placeholder.svg"}
-                  alt="After detailing"
-                  className="w-full h-40 object-cover rounded-md"
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="mt-2 text-sm text-muted-foreground">{p.caption}</figcaption>
-            </figure>
-          ))}
+    <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
+      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <Link href="#" aria-label="D-LUX Detailing Home" className="flex items-center gap-3 hover-glow">
+          <Image
+            src="https://i.imgur.com/8Km9tLL.png"
+            alt="D-LUX Detailing logo"
+            width={40}
+            height={40}
+            className="rounded-sm"
+            priority
+          />
+          <span className="font-semibold tracking-wide">D-LUX Detailing</span>
+        </Link>
+        <nav aria-label="Primary">
+          <ul className="hidden md:flex items-center gap-6 text-sm">
+            {[
+              { href: "#services", label: "Services" },
+              { href: "#process", label: "Process" },
+              { href: "#gallery", label: "Before/After" },
+              { href: "#pricing", label: "Pricing" },
+              { href: "#contact", label: "Contact" },
+            ].map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="hover-glow px-3 py-1.5 rounded-md transition-all duration-300 ease-out hover:bg-black/60 hover:scale-105"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="hidden md:block">
+          <Button asChild className="bg-primary text-primary-foreground hover-glow">
+            <a href="tel:+15055570590" aria-label="Call D-LUX Detailing">
+              (505) 557-0590
+            </a>
+          </Button>
         </div>
       </div>
-    </section>
+    </header>
   )
 }
