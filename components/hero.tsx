@@ -5,7 +5,8 @@ export function Hero() {
     <section aria-label="Hero" className="relative isolate overflow-hidden min-h-[100svh]">
       {/* Background moving image */}
       <div
-        className="absolute inset-0 bg-[url('/img/hero-dlux.jpg')] bg-cover bg-center bg-no-repeat motion-safe:hero-drift"
+        className="absolute inset-0 bg-[url('/img/hero-dlux.jpg')] bg-center bg-no-repeat motion-safe:hero-drift"
+        style={{ backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-6xl px-4 min-h-[100svh] flex items-center">
@@ -27,8 +28,8 @@ export function Hero() {
           </div>
         </div>
       </div>
-      {/* subtle vignetting for readability */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-background/20" />
+      {/* Subtle vignette overlay for readability */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-background/10" />
     </section>
   )
 }
