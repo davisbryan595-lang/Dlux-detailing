@@ -1,20 +1,19 @@
-import { Card, CardContent } from "@/components/ui/card"
+"use client"
 
-const galleryItems = [
+import Image from "next/image"
+
+const gallery = [
   {
-    title: "Paint Correction",
-    before: "https://i.imgur.com/yRwr54Y.jpg",
-    after: "https://i.imgur.com/5Z1v2Zf.jpg",
+    before: "https://images.unsplash.com/photo-1603690439501-098e996b5841?auto=format&fit=crop&w=1920&q=80",
+    after: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1920&q=80",
   },
   {
-    title: "Interior Detailing",
-    before: "https://i.imgur.com/lKj2akB.jpg",
-    after: "https://i.imgur.com/VmEoWxV.jpg",
+    before: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1920&q=80",
+    after: "https://images.unsplash.com/photo-1619767886558-efdc50d4b786?auto=format&fit=crop&w=1920&q=80",
   },
   {
-    title: "Headlight Restoration",
-    before: "https://i.imgur.com/69utpHu.jpg",
-    after: "https://i.imgur.com/c3t1oLR.jpg",
+    before: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1920&q=80",
+    after: "https://images.unsplash.com/photo-1615732045431-4c3f1e8efb1c?auto=format&fit=crop&w=1920&q=80",
   },
 ]
 
@@ -25,32 +24,32 @@ export function Gallery() {
         <h2 id="gallery-title" className="text-3xl md:text-4xl font-semibold">
           Before & After
         </h2>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {galleryItems.map((item) => (
-            <Card key={item.title} className="overflow-hidden reveal">
-              <CardContent className="p-0">
-                <div className="relative group">
-                  <img
-                    src={item.before}
-                    alt={`${item.title} before`}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <p className="text-white text-sm font-semibold">Before</p>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <img
-                    src={item.after}
-                    alt={`${item.title} after`}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <p className="text-white text-sm font-semibold">After</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        <div className="mt-8 grid md:grid-cols-2 gap-8">
+          {gallery.map((item, idx) => (
+            <div key={idx} className="grid grid-cols-2 gap-2 reveal">
+              <div className="relative w-full h-48 md:h-64 rounded overflow-hidden">
+                <Image
+                  src={item.before}
+                  alt="Before detailing"
+                  fill
+                  className="object-cover"
+                />
+                <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-0.5 rounded">
+                  Before
+                </span>
+              </div>
+              <div className="relative w-full h-48 md:h-64 rounded overflow-hidden">
+                <Image
+                  src={item.after}
+                  alt="After detailing"
+                  fill
+                  className="object-cover"
+                />
+                <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-0.5 rounded">
+                  After
+                </span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
