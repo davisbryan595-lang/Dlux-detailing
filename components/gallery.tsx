@@ -1,33 +1,20 @@
-const pairs = [
+import { Card, CardContent } from "@/components/ui/card"
+
+const galleryItems = [
   {
-    before: "/img/beforeafter/1-before-large.jpg",
-    after: "/img/beforeafter/1-after-large.jpg",
-    caption: "Interior deep clean and leather care.",
+    title: "Paint Correction",
+    before: "https://i.imgur.com/yRwr54Y.jpg",
+    after: "https://i.imgur.com/5Z1v2Zf.jpg",
   },
   {
-    before: "/img/beforeafter/2-before-large.jpg",
-    after: "/img/beforeafter/2-after-large.jpg",
-    caption: "Exterior wash and paint decontamination.",
+    title: "Interior Detailing",
+    before: "https://i.imgur.com/lKj2akB.jpg",
+    after: "https://i.imgur.com/VmEoWxV.jpg",
   },
   {
-    before: "/img/beforeafter/3-before-large.jpg",
-    after: "/img/beforeafter/3-after-large.jpg",
-    caption: "Headlight restoration and lens sealing.",
-  },
-  {
-    before: "/img/beforeafter/4-before-large.jpg",
-    after: "/img/beforeafter/4-after-large.jpg",
-    caption: "Engine bay freshen and dressing.",
-  },
-  {
-    before: "/img/beforeafter/5-before-large.jpg",
-    after: "/img/beforeafter/5-after-large.jpg",
-    caption: "Paint correction for swirl removal.",
-  },
-  {
-    before: "/img/beforeafter/6-before-large.jpg",
-    after: "/img/beforeafter/6-after-large.jpg",
-    caption: "Ceramic coating hydrophobic finish.",
+    title: "Headlight Restoration",
+    before: "https://i.imgur.com/69utpHu.jpg",
+    after: "https://i.imgur.com/c3t1oLR.jpg",
   },
 ]
 
@@ -38,25 +25,32 @@ export function Gallery() {
         <h2 id="gallery-title" className="text-3xl md:text-4xl font-semibold">
           Before & After
         </h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {pairs.map((p, i) => (
-            <figure key={i} className="reveal">
-              <div className="grid grid-cols-2 gap-2">
-                <img
-                  src={p.before || "/placeholder.svg"}
-                  alt="Before detailing"
-                  className="w-full h-40 object-cover rounded-md"
-                  loading="lazy"
-                />
-                <img
-                  src={p.after || "/placeholder.svg"}
-                  alt="After detailing"
-                  className="w-full h-40 object-cover rounded-md"
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="mt-2 text-sm text-muted-foreground">{p.caption}</figcaption>
-            </figure>
+        <div className="mt-8 grid md:grid-cols-3 gap-6">
+          {galleryItems.map((item) => (
+            <Card key={item.title} className="overflow-hidden reveal">
+              <CardContent className="p-0">
+                <div className="relative group">
+                  <img
+                    src={item.before}
+                    alt={`${item.title} before`}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-white text-sm font-semibold">Before</p>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={item.after}
+                    alt={`${item.title} after`}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-white text-sm font-semibold">After</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
